@@ -149,6 +149,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
+          // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
           supportedLocales: S.delegate.supportedLocales,
           title: 'Hubble Cloudlink', //wlParams.appTitle!,
           themeMode: ThemeMode.light,
@@ -163,6 +164,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
+                // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
                 supportedLocales: S.delegate.supportedLocales,
                 title: 'Hubble Cloudlink',
                 theme: data,
@@ -180,6 +182,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
                   GlobalWidgetsLocalizations.delegate,
                   GlobalCupertinoLocalizations.delegate,
                 ],
+                // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
                 supportedLocales: S.delegate.supportedLocales,
                 title: 'Hubble Cloudlink',
                 theme: data,
