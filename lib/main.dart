@@ -139,7 +139,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         systemNavigationBarColor: Colors.white,
         statusBarColor: Colors.white,
-        systemNavigationBarIconBrightness: Brightness.light));
+        systemNavigationBarIconBrightness: Brightness.dark));
     return WlThemeWidget(
       appRouter.tbContext,
       wlThemedWidgetBuilder: (context, data, wlParams) => MaterialApp(
@@ -151,7 +151,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
           ],
           // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
           supportedLocales: S.delegate.supportedLocales,
-          title: wlParams.appTitle!,
+          title: 'Hubble Cloudlink', //wlParams.appTitle!,
           themeMode: ThemeMode.light,
           home: TwoPageView(
               controller: _mainPageViewController,
@@ -166,7 +166,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
                 ],
                 // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
                 supportedLocales: S.delegate.supportedLocales,
-                title: wlParams.appTitle!,
+                title: 'Hubble Cloudlink',
                 theme: data,
                 themeMode: ThemeMode.light,
                 darkTheme: tbDarkTheme,
@@ -184,7 +184,7 @@ class ThingsboardAppState extends State<ThingsboardApp>
                 ],
                 // debugShowCheckedModeBanner: false, //Uncomment to remove debug banner
                 supportedLocales: S.delegate.supportedLocales,
-                title: wlParams.appTitle!,
+                title: 'Hubble Cloudlink',
                 theme: data,
                 themeMode: ThemeMode.light,
                 darkTheme: tbDarkTheme,
