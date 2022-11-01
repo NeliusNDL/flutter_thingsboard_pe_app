@@ -4,7 +4,7 @@ abstract class ThingsboardAppConstants {
       'org.hubblelithium.app.auth';
 
   /// Not for production (only for debugging)
-  static final thingsboardOAuth2AppSecret = 'Your app secret here';
+  static final thingsboardOAuth2AppSecret = 'XCycH79WyGLo26VI6G9tPxux';
 
   /// Not for production (only for debugging)
   static final thingsboardSignUpAppSecret = 'M18vRiweYOWcZ2bIPgFuaf4p';
