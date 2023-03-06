@@ -4,7 +4,8 @@ abstract class ThingsboardAppConstants {
       'com.hubblelithium.app.auth';
 
   /// Not for production (only for debugging)
-  static final thingsboardOAuth2AppSecret = 'XCycH79WyGLo26VI6G9tPxux';
+  // When building for iOS use nDoC7obkQqhZAUJBgASAStW1 and Android use XCycH79WyGLo26VI6G9tPxux
+  static final thingsboardOAuth2AppSecret = 'nDoC7obkQqhZAUJBgASAStW1';
 
   /// Not for production (only for debugging)
   static final thingsboardSignUpAppSecret = 'M18vRiweYOWcZ2bIPgFuaf4p';
