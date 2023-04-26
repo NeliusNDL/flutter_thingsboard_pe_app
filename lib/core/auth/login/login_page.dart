@@ -118,23 +118,33 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       FormBuilderTextField(
-                                        name: 'username',
-                                        keyboardType:
-                                            TextInputType.emailAddress,
-                                        validator:
-                                            FormBuilderValidators.compose([
-                                          FormBuilderValidators.required(
-                                              errorText:
-                                                  '${S.of(context).emailRequireText}'),
-                                          FormBuilderValidators.email(
-                                              errorText:
-                                                  '${S.of(context).emailInvalidText}')
-                                        ]),
-                                        decoration: InputDecoration(
-                                            border: OutlineInputBorder(),
-                                            labelText:
-                                                '${S.of(context).email}'),
-                                      ),
+                                          name: 'username',
+                                          keyboardType:
+                                              TextInputType.emailAddress,
+                                          validator:
+                                              FormBuilderValidators.compose([
+                                            FormBuilderValidators.required(
+                                                errorText:
+                                                    '${S.of(context).emailRequireText}'),
+                                            FormBuilderValidators.email(
+                                                errorText:
+                                                    '${S.of(context).emailInvalidText}')
+                                          ]),
+                                          decoration: new InputDecoration(
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.white,
+                                                    width: 1.0),
+                                              ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                    color: Colors.grey,
+                                                    width: 1.0),
+                                              ),
+                                              labelText:
+                                                  '${S.of(context).email}',
+                                              labelStyle: TextStyle(
+                                                  color: Colors.grey))),
                                       SizedBox(height: 28),
                                       ValueListenableBuilder(
                                           valueListenable:
@@ -150,11 +160,26 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                     errorText:
                                                         '${S.of(context).passwordRequireText}')
                                               ]),
-                                              decoration: InputDecoration(
+                                              decoration: new InputDecoration(
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                                   suffixIcon: IconButton(
-                                                    icon: Icon(showPassword
-                                                        ? Icons.visibility
-                                                        : Icons.visibility_off),
+                                                    icon: Icon(
+                                                        showPassword
+                                                            ? Icons.visibility
+                                                            : Icons
+                                                                .visibility_off,
+                                                        color: Colors.grey),
                                                     onPressed: () {
                                                       _showPasswordNotifier
                                                               .value =
@@ -162,9 +187,10 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                                               .value;
                                                     },
                                                   ),
-                                                  border: OutlineInputBorder(),
                                                   labelText:
-                                                      '${S.of(context).password}'),
+                                                      '${S.of(context).password}',
+                                                  labelStyle: TextStyle(
+                                                      color: Colors.grey)),
                                             );
                                           })
                                     ],

@@ -41,7 +41,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xff0277B7),
         resizeToAvoidBottomInset: false,
         body: Stack(children: [
           LoginPageBackground(),
@@ -77,7 +77,8 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
                                                 .signUpTextMessage!,
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
-                                                color: Color(0xFFAFAFAF),
+                                                color: Color.fromARGB(
+                                                    255, 187, 184, 184),
                                                 fontWeight: FontWeight.normal,
                                                 fontSize: 14,
                                                 height: 24 / 24)))
@@ -263,9 +264,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
                                                 child: Text(
                                                   '${S.of(context).privacyPolicy}',
                                                   style: TextStyle(
-                                                      color: Theme.of(context)
-                                                          .colorScheme
-                                                          .primary,
+                                                      color: Colors.white,
                                                       letterSpacing: 1,
                                                       fontSize: 14,
                                                       height: 20 / 14),
@@ -335,7 +334,10 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('${S.of(context).alreadyHaveAnAccount}',
-                            style: TextStyle(fontSize: 14, height: 20 / 14)),
+                            style: TextStyle(
+                              fontSize: 14,
+                              height: 20 / 14,
+                            )),
                         TextButton(
                           onPressed: () {
                             _login();
@@ -343,7 +345,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
                           child: Text(
                             '${S.of(context).signIn}',
                             style: TextStyle(
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Color.fromARGB(255, 187, 184, 184),
                                 letterSpacing: 1,
                                 fontSize: 14,
                                 height: 20 / 14),

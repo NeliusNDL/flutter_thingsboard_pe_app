@@ -1,7 +1,6 @@
 abstract class ThingsboardImage {
-  static final thingsBoardWithTitle =
-      'assets/images/thingsboard_with_title.svg';
-  static final thingsboard = 'assets/images/thingsboard.svg';
+  static final thingsBoardWithTitle = 'assets/images/Hubble_White_Logo.png';
+  static final thingsboard = 'assets/images/Hubble_White_Logo.png';
   static final bubble = 'assets/images/blue.svg';
   static final thingsboardOuter = 'assets/images/single-1.svg';
   static final thingsboardCenter = 'assets/images/single-2.svg';

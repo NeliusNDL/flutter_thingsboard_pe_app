@@ -33,7 +33,7 @@ void main() async {
     await AndroidInAppWebViewController.setWebContentsDebuggingEnabled(true);
   }
 
-  await Upgrader.clearSavedSettings(); // REMOVE this for release builds
+  //await Upgrader.clearSavedSettings(); // REMOVE this for release builds
 
   runApp(ThingsboardApp());
 }

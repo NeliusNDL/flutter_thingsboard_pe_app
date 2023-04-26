@@ -18,23 +18,21 @@ class WlService {
   static final _defaultLoginThemeData =
       TbThemeUtils.createTheme(_defaultLoginWlParams.paletteSettings);
 
-  static final _defaultLogo = SvgPicture.asset(
-      ThingsboardImage.thingsBoardWithTitle,
-      height: 36 / 3 * 2,
-      color: TbThemeUtils.tbPrimary,
-      semanticsLabel: 'ThingsBoard Logo');
+  static final _defaultLogo = Image(
+      image: AssetImage('assets/images/Hubble_White_Logo.png'),
+      height: 108 / 3 * 2,
+      semanticLabel: 'Hubble Logo');
 
-  static final _defaultLoginLogo = SvgPicture.asset(
-      ThingsboardImage.thingsBoardWithTitle,
-      height: 50 / 3 * 2,
-      color: TbThemeUtils.tbPrimary,
-      semanticsLabel: 'ThingsBoard Logo');
+  static final _defaultLoginLogo = Image(
+      image: AssetImage('assets/images/Hubble_White_Logo.png'),
+      height: 200 / 3 * 2,
+      semanticLabel: 'Hubble Logo');
 
   static WhiteLabelingParams _createDefaultWlParams() => WhiteLabelingParams(
       logoImageUrl: DEFAULT_LOGO_URL,
       logoImageChecksum: 'ce227e602495446086a0672d3a2f1d899203dd4d',
       logoImageHeight: 36,
-      appTitle: 'ThingsBoard PE',
+      appTitle: 'Hubble Cloudlink',
       favicon: Favicon(url: 'thingsboard.ico', type: 'image/x-icon'),
       faviconChecksum: '87059b3055f7ce8b8e43f18f470ed895a316f5ec',
       paletteSettings: PaletteSettings(
@@ -299,10 +297,10 @@ class WlService {
       image = SvgPicture.asset(ThingsboardImage.thingsBoardWithTitle,
           height: height,
           color: themeData.primaryColor,
-          semanticsLabel: 'ThingsBoard Logo');
+          semanticsLabel: 'Hubble Logo');
     } else {
       image = Utils.imageFromBase64(wlParams.logoImageUrl!,
-          height: height, semanticLabel: 'ThingsBoard Logo');
+          height: height, semanticLabel: 'Hubble Logo');
     }
     if (isLogin) {
       _loginLogo = image;
