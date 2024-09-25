@@ -16,14 +16,16 @@ import 'package:thingsboard_pe_client/thingsboard_client.dart';
 
 import 'login_page_background.dart';
 
-class LoginPage extends TbPageWidget {
+class LoginPage extends TbPageWidget 
+{
   LoginPage(TbContext tbContext) : super(tbContext);
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginPageState extends TbPageState<LoginPage> {
+class _LoginPageState extends TbPageState<LoginPage> 
+{
   final ButtonStyle _oauth2ButtonWithTextStyle = OutlinedButton.styleFrom(
     padding: EdgeInsets.all(16),
     alignment: Alignment.center,
@@ -413,6 +415,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
     _isLoginNotifier.value = true;
     try {
       final result = await tbContext.oauth2Client.authenticate(client.url);
+      print(result);
       if (result.success) {
         await tbClient.setUserFromJwtToken(
             result.accessToken, result.refreshToken, true);
@@ -434,7 +437,9 @@ class _LoginPageState extends TbPageState<LoginPage> {
       String password = formValue['password'];
       _isLoginNotifier.value = true;
       try {
-        await tbClient.login(LoginRequest(username, password));
+        var result = await tbClient.login(LoginRequest(username, password));
+        print("LOGIN RESULT: $result");
+
       } catch (e) {
         _isLoginNotifier.value = false;
       }

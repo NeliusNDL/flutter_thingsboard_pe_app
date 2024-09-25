@@ -288,35 +288,70 @@ class TbContext {
 
   Future<void> onUserLoaded() async {
     try {
+      print("11111111111111111");
+
       log.debug('onUserLoaded: isAuthenticated=${tbClient.isAuthenticated()}');
       isUserLoaded = true;
-      if (tbClient.isAuthenticated() && !tbClient.isPreVerificationToken()) {
+      if (tbClient.isAuthenticated() && !tbClient.isPreVerificationToken()) 
+      {
+
         log.debug('authUser: ${tbClient.getAuthUser()}');
-        if (tbClient.getAuthUser()!.userId != null) {
-          try {
+       
+        var a = tbClient.getAuthUser()!.userId;
+        print("aaaa");
+        print(a);
+
+        if (tbClient.getAuthUser()!.userId != null) 
+        {
+          try 
+          {
+            print("user Details");
             userDetails = await tbClient.getUserService().getUser();
+            print(userDetails);
+            print("User Permissions");
+
+            /*
             userPermissions = await tbClient
                 .getUserPermissionsService()
                 .getAllowedPermissions();
+            print(userPermissions);
+            print("Home Dashboard");
+            */
+            
             homeDashboard =
                 await tbClient.getDashboardService().getHomeDashboardInfo();
-          } catch (e) {
-            if (!_isConnectionError(e)) {
+                
+            print(homeDashboard);
+          } 
+          catch (e) 
+          {
+            print("ERROR: ");
+            print(e);
+            if (!_isConnectionError(e)) 
+            {
               tbClient.logout();
-            } else {
+            } 
+            else 
+            {
               rethrow;
             }
           }
         }
-      } else {
-        if (tbClient.isPreVerificationToken()) {
+      } 
+      else 
+      {
+        if (tbClient.isPreVerificationToken()) 
+        {
           log.debug('authUser: ${tbClient.getAuthUser()}');
           twoFactorAuthProviders = await tbClient
               .getTwoFactorAuthService()
               .getAvailableLoginTwoFaProviders();
-        } else {
+        } 
+        else 
+        {
           twoFactorAuthProviders = null;
         }
+
         userDetails = null;
         userPermissions = null;
         homeDashboard = null;
@@ -326,21 +361,30 @@ class TbContext {
             .getSelfRegistrationService()
             .getSignUpSelfRegistrationParams(pkgName: packageName);
       }
+
       _isAuthenticated.value =
           tbClient.isAuthenticated() && !tbClient.isPreVerificationToken();
       await wlService.updateWhiteLabeling();
       await updateRouteState();
-    } catch (e, s) {
-      log.error('Error: $e', e, s);
-      if (_isConnectionError(e)) {
+    } 
+    catch (e, s) 
+    {
+      log.error('Error2222 : $e', e, s);
+
+      if (_isConnectionError(e)) 
+      {
         var res = await confirm(
             title: 'Connection error',
             message: 'Failed to connect to server',
             cancel: 'Cancel',
             ok: 'Retry');
-        if (res == true) {
+
+        if (res == true) 
+        {
           onUserLoaded();
-        } else {
+        } 
+        else
+        {
           navigateTo('/login',
               replace: true,
               clearStack: true,
