@@ -26,7 +26,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         appBar: TbAppBar(
           tbContext,
           title: Text('${S.of(context).changePassword}'),
@@ -133,7 +133,9 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   padding: EdgeInsets.all(16),
-                                  alignment: Alignment.centerLeft),
+                                  alignment: Alignment.centerLeft,
+                                  backgroundColor: Colors.blueAccent,
+                                  foregroundColor: Colors.white),
                               onPressed: () {
                                 _changePassword();
                               },

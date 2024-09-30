@@ -42,7 +42,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         appBar: TbAppBar(
           tbContext,
           title: const Text('Profile'),
@@ -105,7 +105,9 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                           OutlinedButton(
                               style: OutlinedButton.styleFrom(
                                   padding: EdgeInsets.all(16),
-                                  alignment: Alignment.centerLeft),
+                                  alignment: Alignment.centerLeft,
+                                  backgroundColor: Colors.blueAccent,
+                                  foregroundColor: Colors.white),
                               onPressed: () {
                                 _changePassword();
                               },
@@ -169,7 +171,7 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
       }
     }
   }
-
+ 
   _changePassword() async {
     var res = await tbContext
         .showFullScreenDialog<bool>(new ChangePasswordPage(tbContext));
