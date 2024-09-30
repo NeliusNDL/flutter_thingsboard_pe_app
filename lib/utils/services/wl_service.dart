@@ -274,7 +274,10 @@ class WlService {
 
   Future<void> _updateImages(
       WhiteLabelingParams wlParams, ThemeData themeData, bool isLogin) async {
-    String prefix = isLogin ? 'login' : 'user';
+
+    try
+    {
+ String prefix = isLogin ? 'login' : 'user';
     var storedLogoImageChecksum =
         await _tbContext.storage.getItem(prefix + '_logo_image_checksum');
     var storedFaviconChecksum =
@@ -322,5 +325,11 @@ class WlService {
           url: await _tbContext.storage.getItem(prefix + '_favicon_url'),
           type: await _tbContext.storage.getItem(prefix + '_favicon_type'));
     }
+    }
+    catch(error)
+    {
+
+    }
+   
   }
 }

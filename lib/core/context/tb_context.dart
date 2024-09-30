@@ -295,9 +295,13 @@ class TbContext {
         if (tbClient.getAuthUser()!.userId != null) {
           try {
             userDetails = await tbClient.getUserService().getUser();
+
+            /*
             userPermissions = await tbClient
                 .getUserPermissionsService()
                 .getAllowedPermissions();
+            */
+            
             homeDashboard =
                 await tbClient.getDashboardService().getHomeDashboardInfo();
           } catch (e) {
