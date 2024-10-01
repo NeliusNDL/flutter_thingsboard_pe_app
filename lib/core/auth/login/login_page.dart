@@ -132,7 +132,7 @@ class _LoginPageState extends TbPageState<LoginPage> {
                                           ]),
                                           decoration: new InputDecoration(
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: BorderSide(
+                                                borderSide: BorderSide( 
                                                     color: Colors.white,
                                                     width: 1.0),
                                               ),

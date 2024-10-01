@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -27,6 +29,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black,
+        resizeToAvoidBottomInset: true,
         appBar: TbAppBar(
           tbContext,
           title: Text('${S.of(context).changePassword}'),
@@ -35,7 +38,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
           children: [
             SizedBox.expand(
               child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: EdgeInsets.fromLTRB(24, 65, 24, 24),
                   child: SingleChildScrollView(
                       child: FormBuilder(
                     key: _changePasswordFormKey,
@@ -44,7 +47,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           SizedBox(height: 16),
-                          ValueListenableBuilder(
+                          ValueListenableBuilder( 
                               valueListenable: _showCurrentPasswordNotifier,
                               builder: (BuildContext context, bool showPassword,
                                   child) {
@@ -58,6 +61,19 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                             '${S.of(context).currentPasswordRequireText}')
                                   ]),
                                   decoration: InputDecoration(
+                                    floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
@@ -85,8 +101,21 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                     FormBuilderValidators.required(
                                         errorText:
                                             '${S.of(context).newPasswordRequireText}')
-                                  ]),
-                                  decoration: InputDecoration(
+                                  ]), 
+                                  decoration: new InputDecoration(
+                                    floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
@@ -96,7 +125,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                               !_showNewPasswordNotifier.value;
                                         },
                                       ),
-                                      border: OutlineInputBorder(),
+                                    
                                       labelText:
                                           '${S.of(context).newPasswordStar}'),
                                 );
@@ -114,7 +143,20 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                         errorText:
                                             '${S.of(context).newPassword2RequireText}')
                                   ]),
-                                  decoration: InputDecoration(
+                                  decoration: new InputDecoration(
+                                    floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                       suffixIcon: IconButton(
                                         icon: Icon(showPassword
                                             ? Icons.visibility
@@ -124,7 +166,7 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                                               !_showNewPassword2Notifier.value;
                                         },
                                       ),
-                                      border: OutlineInputBorder(),
+                                      
                                       labelText:
                                           '${S.of(context).newPassword2Star}'),
                                 );
@@ -149,12 +191,27 @@ class _ChangePasswordPageState extends TbContextState<ChangePasswordPage> {
                 valueListenable: _isLoadingNotifier,
                 builder: (BuildContext context, bool loading, child) {
                   if (loading) {
-                    return SizedBox.expand(
-                        child: Container(
-                      color: Color(0x99FFFFFF),
-                      child: Center(
-                          child: TbProgressIndicator(tbContext, size: 50.0)),
-                    ));
+                     var data =
+                      MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+                     var bottomPadding = data.padding.top;
+                     bottomPadding += kToolbarHeight;
+                     return SizedBox.expand(
+                      child: ClipRect(
+                          child: BackdropFilter(
+                              filter:
+                                  ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                              child: Container(
+                                decoration: new BoxDecoration(
+                                    color:
+                                        Colors.grey.shade200.withOpacity(0.6)),
+                                child: Container(
+                                  padding:
+                                      EdgeInsets.only(bottom: bottomPadding),
+                                  alignment: Alignment.center,
+                                  child: TbProgressIndicator(tbContext,
+                                      size: 50.0),
+                                ),
+                              ))));
                   } else {
                     return SizedBox.shrink();
                   }

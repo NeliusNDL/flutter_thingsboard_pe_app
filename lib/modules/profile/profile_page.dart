@@ -9,7 +9,7 @@ import 'package:thingsboard_app/core/context/tb_context.dart';
 import 'package:thingsboard_app/core/context/tb_context_widget.dart';
 import 'package:thingsboard_app/widgets/tb_progress_indicator.dart';
 import 'package:thingsboard_pe_client/thingsboard_client.dart';
-
+ 
 class ProfilePage extends TbPageWidget {
   final bool _fullscreen;
 
@@ -84,6 +84,19 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                                       '${S.of(context).emailInvalidText}')
                             ]),
                             decoration: InputDecoration(
+                              floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                 border: OutlineInputBorder(),
                                 labelText: '${S.of(context).emailStar}'),
                           ),
@@ -91,6 +104,19 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                           FormBuilderTextField(
                             name: 'firstName',
                             decoration: InputDecoration(
+                              floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                 border: OutlineInputBorder(),
                                 labelText: '${S.of(context).firstNameUpper}'),
                           ),
@@ -98,6 +124,19 @@ class _ProfilePageState extends TbPageState<ProfilePage> {
                           FormBuilderTextField(
                             name: 'lastName',
                             decoration: InputDecoration(
+                              floatingLabelStyle: TextStyle(color: Colors.white),
+                                    focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.white,
+                                                        width: 1.0),
+                                                  ),
+                                    enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                        color: Colors.grey,
+                                                        width: 1.0),
+                                                  ),
                                 border: OutlineInputBorder(),
                                 labelText: '${S.of(context).lastNameUpper}'),
                           ),
