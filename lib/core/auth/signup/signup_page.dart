@@ -360,7 +360,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
           ValueListenableBuilder<bool>(
               valueListenable: _isSignUpNotifier,
               builder: (BuildContext context, bool loading, child) {
-                if (loading) {
+ if (loading) {
                   var data =
                       MediaQueryData.fromWindow(WidgetsBinding.instance.window);
                   var bottomPadding = data.padding.top;
@@ -373,7 +373,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
                               child: Container(
                                 decoration: new BoxDecoration(
                                     color:
-                                        Colors.grey.shade200.withOpacity(0.2)),
+                                        Colors.grey.shade200.withOpacity(0.6)),
                                 child: Container(
                                   padding:
                                       EdgeInsets.only(bottom: bottomPadding),
@@ -491,7 +491,7 @@ class _SignUpPageState extends TbPageState<SignUpPage> {
         message: '${S.of(context).inactiveUserAlreadyExistsMessage}',
         cancel: '${S.of(context).cancel}',
         ok: '${S.of(context).resend}');
-    if (res == true) {
+    if (res == true) { 
       await tbClient
           .getSignupService()
           .resendEmailActivation(email, pkgName: tbContext.packageName);

@@ -9,7 +9,7 @@ abstract class ThingsboardImage {
       'assets/images/device-profile-placeholder.svg';
   static final emailVerification = 'assets/images/email-verification.svg';
   static final emailVerified = 'assets/images/email-verified.svg';
-
+ 
   static final oauth2Logos = <String, String>{
     'google-logo': 'assets/images/google-logo.svg',
     'github-logo': 'assets/images/github-logo.svg',
