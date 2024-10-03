@@ -368,7 +368,7 @@ class TbContext {
   bool get hasOAuthClients =>
       oauth2ClientInfos != null && oauth2ClientInfos!.isNotEmpty;
 
-  bool get hasSelfRegistration =>
+  bool get hasSelfRegistration => true
       signUpParams != null && signUpParams!.captchaSiteKey != null;
 
   bool hasGenericPermission(Resource resource, Operation operation) {
