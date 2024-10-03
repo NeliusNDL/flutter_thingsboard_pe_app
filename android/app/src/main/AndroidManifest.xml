@@ -62,7 +62,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="tbscheme" android:host="com.hubblelithium.app" />
+                <data android:scheme="tbscheme" android:host="com.hubbleenergy.app" />
             </intent-filter>
 
         </activity>
@@ -74,7 +74,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="com.hubblelithium.app.auth" />
+                <data android:scheme="com.hubbleenergy.app.auth" />
             </intent-filter>
         </activity>
 
