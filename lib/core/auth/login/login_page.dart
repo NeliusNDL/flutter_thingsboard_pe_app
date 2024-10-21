@@ -438,7 +438,10 @@ class _LoginPageState extends TbPageState<LoginPage> {
   void _oauth2ButtonPressed(OAuth2ClientInfo client) async {
     _isLoginNotifier.value = true;
     try {
-      final result = await tbContext.oauth2Client.authenticate(client.url);
+      
+      print('client.url: ${client.url}');
+      //final result = await tbContext.oauth2Client.authenticate(client.url);
+      final result = await tbContext.oauth2Client.authenticate('/login/oauth2/code/');
       if (result.success) {
         await tbClient.setUserFromJwtToken(
             result.accessToken, result.refreshToken, true);
